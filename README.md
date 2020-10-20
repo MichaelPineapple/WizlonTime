@@ -7,4 +7,4 @@ Wizlon Time is a base-10 system of time. One might think of it as "metric time."
 Find it on the GooglePlay Store: https://play.google.com/store/apps/details?id=mcl.wizlontime&hl=en_US
 
 ![img0](https://lh3.googleusercontent.com/qe5Pu9qABtUQ0yZ4-LMI-6OYlarIRCllMjEA9OK-mm-frBAFkB21QvC2kljsQN4eU4k=w1536-h754-rw)
-![img0](https://lh3.googleusercontent.com/xU40keJATbzqX3fZWEhRlGPuJ98FRU0uHILGNgkgJ7Q9ZqDvL9QRcvZUPyqtHFzy6fUk=w720-h310-rw)
+![img0](https://lh3.googleusercontent.com/xU40keJATbzqX3fZWEhRlGPuJ98FRU0uHILGNgkgJ7Q9ZqDvL9QRcvZUPyqtHFzy6fUk=w1536-h754-rw)
