@@ -1,62 +1,66 @@
 package mcl.wizlontime;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
-import java.text.DecimalFormat;
-import java.util.Calendar;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import android.view.MenuItem;
+import com.google.android.material.navigation.NavigationView;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
-
-    public static double GET_WIZLON_TIME()
-    {
-        Calendar c = Calendar.getInstance();
-        return ((c.get(Calendar.HOUR_OF_DAY)*3600000.0)+(c.get(Calendar.MINUTE)*60000.0)+(c.get(Calendar.SECOND)*1000.0)+c.get(Calendar.MILLISECOND))/8640000.0;
-    }
-
-    public static String GET_WIZLON_TIME_STR()
-    {
-        return new DecimalFormat("0.0000").format(GET_WIZLON_TIME());
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        update();
-
-        Thread t = new Thread()
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        if (savedInstanceState ==  null)
         {
-            @Override public void run()
-            {
-                try
-                {
-                    while (!isInterrupted())
-                    {
-                        Thread.sleep(100);
-                        runOnUiThread(new Runnable() { @Override public void run() { update(); }});
-                    }
-                }
-                catch (InterruptedException e)
-                {
-                    ((TextView)findViewById(R.id.E)).setText("-.--");
-                    ((TextView)findViewById(R.id.e)).setText("--");
-                }
-            }
-        };
+            openTimePage();
+            navigationView.setCheckedItem(R.id.nav_home);
+        }
+    }
 
-        t.start();
+    @Override
+    public void onBackPressed()
+    {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) drawer.closeDrawer(GravityCompat.START);
+        else super.onBackPressed();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+        if (id == R.id.nav_home) openTimePage();
+        else if (id == R.id.nav_convert) openConverterPage();
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
 
-    void update()
+    void openTimePage()
     {
-        String wt = GET_WIZLON_TIME_STR();
-        ((TextView)findViewById(R.id.E)).setText(wt.substring(0,4));
-        ((TextView)findViewById(R.id.e)).setText(wt.substring(4,6));
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TimeFragment()).commit();
+    }
+
+    void openConverterPage()
+    {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ConvertFragment()).commit();
     }
 
 }

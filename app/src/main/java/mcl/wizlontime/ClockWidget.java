@@ -29,7 +29,7 @@ public class ClockWidget extends AppWidgetProvider
 
     static void updateAllWidgets(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
     {
-        double v = Math.round(MainActivity.GET_WIZLON_TIME() * 100.0) / 100.0;
+        double v = Math.round(WizlonTools.GET_WIZLON_TIME() * 100.0) / 100.0;
         if (v >= 10.0) v = 0.0;
         String wt = new DecimalFormat("0.00").format(v);
         for (int appWidgetId : appWidgetIds) updateAppWidget(context, appWidgetManager, appWidgetId, wt);
