@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="hotdrink.wizlontime.TimeFragment">
+
+    <TextView
+        android:id="@+id/E"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x.xx"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/E"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="-229dp"
+        android:layout_marginRight="-229dp"
+        android:layout_marginBottom="-112dp"
+        android:layout_toStartOf="@+id/E"
+        android:layout_toLeftOf="@+id/E"
+        android:text="xx"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+
+</RelativeLayout>

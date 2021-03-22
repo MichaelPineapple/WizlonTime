@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+
+    <TextView
+        android:id="@+id/equalsym"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:text="="
+        android:textColor="@android:color/white"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/stupidTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/equalsym"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/equalsym"
+        android:layout_toRightOf="@+id/equalsym"
+        android:width="140dp"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:hint="12:00 AM"
+        android:inputType="text"
+        android:maxLength="11"
+        android:textColor="@android:color/white"
+        android:textColorHint="#85FFFFFF"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/wizlonTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/equalsym"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_toStartOf="@+id/equalsym"
+        android:layout_toLeftOf="@+id/equalsym"
+        android:width="140dp"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:hint="0.00"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white"
+        android:textColorHint="#85FFFFFF"
+        android:textSize="20sp"
+        android:maxLength="6"/>
+
+
+</RelativeLayout>
