@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver android:name="hotdrink.wizlontime.ClockWidget">
+        <receiver android:name=".ClockWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -26,8 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <receiver android:name="hotdrink.wizlontime.ClockWidgetRefresh" android:enabled="true" android:exported="true" />
 
     </application>
 

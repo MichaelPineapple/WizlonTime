@@ -9,9 +9,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/appwidget_text"
+        android:text="@string/default_clock_text"
         android:textColor="#ffffff"
         android:textSize="60sp"
         />
+
+    <Button
+        android:id="@+id/butt_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:text="[not visible]" />
 
 </RelativeLayout>

@@ -10,21 +10,17 @@ import android.text.Editable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import java.text.DecimalFormat;
 
+/** Fragment for converting between wizlon time and standard time */
 public class ConvertFragment extends Fragment
 {
-
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         return inflater.inflate(R.layout.fragment_convert, container, false);
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
@@ -72,8 +68,6 @@ public class ConvertFragment extends Fragment
         for (int i = 0 ; i < str.length(); i++) if (!Character.isDigit(str.charAt(i))) $return = false;
         return $return;
     }
-
-
 
     EditText wizlonInput, stupidInput;
 
@@ -169,7 +163,6 @@ public class ConvertFragment extends Fragment
         return $return;
     }
 
-
     String convertToStupid(double w)
     {
         double a = 8640.0*w;
@@ -192,6 +185,4 @@ public class ConvertFragment extends Fragment
     }
 
     String pad(int val) { return String.format("%02d",val); }
-
-
 }

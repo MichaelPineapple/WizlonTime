@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Wizlon Time</string>
-    <string name="appwidget_text">X.XX</string>
     <string name="add_widget">Add widget</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="widget_color_preview_txt">0.00</string>
+    <string name="default_clock_text">X.XX</string>
+    <string name="default_tolidays_text">XX</string>
+    <string name="label_widgetcolor">Widget Color</string>
+    <string name="label_usegalactic">Galactic Wizlon Time</string>
 </resources>

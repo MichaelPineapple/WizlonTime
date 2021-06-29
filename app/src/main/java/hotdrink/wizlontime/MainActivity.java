@@ -9,10 +9,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-
+/** The launcher activity of the app **/
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -47,11 +46,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.nav_home) openTimePage();
         else if (id == R.id.nav_convert) openConverterPage();
+        else if (id == R.id.nav_settings) openSettingsPage();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
     void openTimePage()
     {
@@ -63,4 +62,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ConvertFragment()).commit();
     }
 
+    void openSettingsPage()
+    {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
+    }
 }
