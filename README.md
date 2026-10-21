@@ -4,4 +4,4 @@ Wizlon Time is a base-10 system of time. One might think of it as "metric time."
 This is the website version of Wizlon Time.
 If the host is up, find it at: https://meowcle.net/WizlonTime
 
-![img0](https://github.com/MichaelPineapple/WizlonTime/blob/Website/screenshots/screenshot0.PNG?raw=true)
+![img0](https://github.com/MichaelPineapple/WizlonTime/blob/main/screenshots/screenshot0.PNG?raw=true)
